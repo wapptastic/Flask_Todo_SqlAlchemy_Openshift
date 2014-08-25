@@ -43,7 +43,7 @@ def show_or_update(todo_id):
     todo_item.content = request.form['content']
     todo_item.done  = ('done.%d' % todo_id) in request.form
     db.session.commit()
-    return redirect('index.html'))
+    return redirect('index.html')
 
 
 
