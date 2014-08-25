@@ -4,13 +4,13 @@
 
     <table class="table table-bordered">
     <div class="control-group">
-      <a href="{{ url_for('new') }}" class="btn btn-large btn-primary">New Todo</a>
+      <a href="{{ url_for('new') }}" class="btn btn-primary">New Todo</a>
     </div>
     <thead>
       <tr>
-        <th>#
-        <th>Content
-        <th>Date
+        <th>Id
+        <th>Todo Item
+        <th>Created
       </tr>
       <tbody>
       {%- for todo in todos %}
