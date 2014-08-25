@@ -45,7 +45,7 @@ def show_or_update(todo_id):
     db.session.commit()
     return redirect('/')
 
-@app.route('/todos/delete/<int:todo_id>', methods = ['DELETE'])
+@app.route('/todos/delete/<int:todo_id>', methods = ['GET'])
 def delete(todo_id):
     Todo.query.filter_by(id=todo_id).delete()
     db.session.commit()
