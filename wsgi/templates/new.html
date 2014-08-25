@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
+  <h1>New To Do</h1>
   <form action="" method=post class="form-inline">
     <input type="text" id="content" name="content" class="input-xlarge"
-            placeholder="Please give title to todo item" value="{{ request.form.content }}"
+            placeholder="Todo item" value="{{ request.form.content }}"
             required>
-    
+     <button type="submit" class="btn btn-primary">Add Todo item</button>
   </form>
 {% endblock %}
