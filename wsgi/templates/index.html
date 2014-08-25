@@ -28,7 +28,7 @@
         <td>{{ todo.created_at.strftime('%d-%m-%Y') }}</td>
         <td><a href="/todos/{{ todo.id }}" class="btn btn-danger">Edit</a>
             <a href="/todos/{{ todo.id }}" class="btn btn-danger">Delete</a>
-            <a href="{{ url_for('delete', id = todo.id) }}">{{ _('Delete') }}</a>
+            <a href="{{ url_for('delete', id = todo.id) }}">Delete</a>
         </td>
       {%- endfor %}
 
