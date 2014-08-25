@@ -1,28 +1,17 @@
 {% extends "layout.html" %}
 {% block body %}
-  <form action="" method=post class="form-horizontal">
-    <h2>Create New Todo</h2>
-    <div class="control-group">
-        <div class="controls">
-          <input type="text" id="content" name="content" class="input-xlarge"
+  <form action="" method=post class="form-inline">
+    <h1>Update To Do</h1>
+    <input type="text" id="content" name="content" class="input-xlarge"
             placeholder="Todo item" value="{{ todo.content }}"
             required>
-        </div>
-    </div>
-
  
-    <div class="control-group">
-        <div class="controls">
-          <input type=checkbox name=done.{{ todo.id }}{{ " checked" if todo.done }}>
-        </div>
-    </div>
+  
+    <input type=checkbox name=done.{{ todo.id }}{{ " checked" if todo.done }}>
+        
  
- 
-    <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn btn-success">Update Todo</button>
-          <a href="{{ url_for('index') }}">Back to list</a>
-        </div>
-    </div>
+    <button type="submit" class="btn btn-success">Update Todo</button>
+    <a href="{{ url_for('index') }}">Back to list</a>
+        
   </form>
 {% endblock %}
