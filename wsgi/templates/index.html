@@ -25,7 +25,7 @@
               <span class="label label-warning">Pending</span>
             {%- endif %}
         </td>
-        <td>{{ todo.created_at.strftime('%d %m %Y') }}</td>
+        <td>{{ todo.created_at.strftime('%d-%m-%Y') }}</td>
         <td><a href="/todos/{{ todo.id }}" class="btn btn-danger">Edit</a></td>
       {%- endfor %}
 
