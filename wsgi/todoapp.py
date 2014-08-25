@@ -27,7 +27,7 @@ def new():
             todo = Todo(request.form['content'])
             db.session.add(todo)
             db.session.commit()
-            return redirect(url_for('index'))
+            return redirect('/')
     return render_template('new.html')
 
 if __name__ == '__main__':
