@@ -49,6 +49,7 @@ def show_or_update(todo_id):
 def delete(todo_id):
     Todo.query.filter_by(id=todo_id).delete()
     db.session.commit()
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run()
