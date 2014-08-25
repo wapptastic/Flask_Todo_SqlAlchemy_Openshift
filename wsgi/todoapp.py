@@ -20,6 +20,11 @@ class Todo(db.Model):
         self.done = False
         self.created_at = datetime.utcnow()
  
+@app.route('/')
+def index():
+    return render_template('index.html',
+        todos=Todo.query.order_by(Todo.created_at.desc()).all()
+    )
 
 @app.route('/new', methods=['GET', 'POST'])
 def new():
@@ -29,6 +34,9 @@ def new():
             db.session.commit()
             return redirect('/')
     return render_template('new.html')
+
+
+
 
 if __name__ == '__main__':
     app.run()
