@@ -11,6 +11,7 @@
         <th>Id
         <th>Todo Item
         <th>Created
+        <th>Done
         <th>Action
       </tr>
       <tbody>
@@ -18,16 +19,20 @@
       <tr class={{ "success" if todo.done }}>
         <td><a href="/todos/{{ todo.id }}">{{ todo.id }}</a></td>
         <td style={{ "text-decoration:line-through" if todo.done }}>{{ todo.content }}</td>
-        <td>{{ todo.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
-        <td><a href="/todos/{{ todo.id }}" class="btn btn-primary">Edit</a></td>
+        <td>{%- if todo.done %}
+              <span class="label label-success">Completed</span>
+            {%- else %}
+              <span class="label label-warning">Pending</span>
+            {%- endif %}
+        </td>
+        <td>{{ todo.created_at.strftime('%d %m %Y') }}</td>
+        <td><a href="/todos/{{ todo.id }}" class="btn btn-danger">Edit</a></td>
       {%- endfor %}
 
     </tr>
     </tbody>
     </table>
     <p>
-      
- 
- 
+
 </div>
 {% endblock %}
