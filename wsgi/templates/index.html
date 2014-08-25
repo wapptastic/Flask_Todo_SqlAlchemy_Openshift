@@ -19,7 +19,7 @@
         <td><a href="/todos/{{ todo.id }}">{{ todo.id }}</a></td>
         <td style={{ "text-decoration:line-through" if todo.done }}>{{ todo.content }}</td>
         <td>{{ todo.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
-        <td><a href="{{ url_for('todos/{{ todo.id }}') }}" class="btn btn-primary">Edit</a></td>
+        <td><a href="/todos/{{ todo.id }}" class="btn btn-primary">Edit</a></td>
       {%- endfor %}
 
     </tr>
